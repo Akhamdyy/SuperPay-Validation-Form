@@ -1,0 +1,7 @@
+.bi-exclamation-circle{
+    /* display:flex; */
+    justify-content:right;
+    align-items: center;
+    color: red;
+    margin-right: 5px;
+}
