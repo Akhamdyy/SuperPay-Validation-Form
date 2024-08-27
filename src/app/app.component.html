@@ -21,10 +21,12 @@
     <div class="input-box">
       <label>Card Number</label>
       <input type="text" maxlength="16" oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="1234 XXXX XXXX XXXX" formControlName="cardnum">
-      <div *ngIf="reactiveForm.get('cardnum')?.touched">
+      <!-- <div *ngIf="reactiveForm.get('cardnum')?.touched">
         <small *ngIf="reactiveForm.get('cardnum')?.errors?.['required']">*Card Number is a required field</small>
-        <small *ngIf="reactiveForm.get('cardnum')?.errors?.['luhnChk']">*Please enter a valid Card Number</small>
-      </div>
+        <small *ngIf="reactiveForm.get('cardnum')?.errors?.['luhnCheck']">*Please enter a valid Card Number</small>
+      </div> -->
+      <small *ngIf="reactiveForm.get('cardnum')?.invalid && reactiveForm.get('cardnum')?.touched">*Please enter a valid Card Number</small>
+
     </div> 
     
 
@@ -37,6 +39,7 @@
           <small *ngIf="reactiveForm.get('expnum')?.errors?.['required']">*Expiry date is a required field</small>
           <small *ngIf="reactiveForm.get('expnum')?.errors?.['isExp']">*Please enter a valid expiry date</small>
         </div>
+        <!-- <small *ngIf="reactiveForm.get('expnum')?.invalid && reactiveForm.get('expnum')?.touched">*Please enter a valid Expiry Date</small> -->
       </div>
       <div class="input-box-2 ">
         <label>CVV</label>
