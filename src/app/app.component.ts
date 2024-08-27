@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
       age: new FormControl('',[Validators.required, Validators.min(16), Validators.max(150)]),
       cardnum: new FormControl('',[Validators.required,Validators.minLength(12),Validators.maxLength(16),luhnValidator() ]),
       expnum: new FormControl('',[Validators.required, Validators.maxLength(4),expiredCard]),
-      cvc: new FormControl('',[Validators.required, Validators.maxLength(3)]),
+      cvc: new FormControl('',[Validators.required, Validators.maxLength(3), Validators.minLength(3)]),
     });
   }
   onFormSubmitted(){
